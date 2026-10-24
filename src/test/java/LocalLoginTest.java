@@ -11,15 +11,18 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
 public class LocalLoginTest {
 
     WebDriver driver;
 
     @BeforeMethod
     public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        
-        options.addArguments("--start-maximized");
+    	ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--window-size=1920,1080");
 
         driver = new ChromeDriver(options);
 
@@ -29,6 +32,7 @@ public class LocalLoginTest {
                 .toString();
 
         driver.get(page);
+    }
     }
 
     @Test
