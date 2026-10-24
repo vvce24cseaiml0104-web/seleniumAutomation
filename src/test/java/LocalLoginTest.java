@@ -33,7 +33,7 @@ public class LocalLoginTest {
 
         driver.get(page);
     }
-    }
+    
 
     @Test
     public void validLoginTest() {
